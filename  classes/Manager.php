@@ -47,4 +47,19 @@ class Manager {
     {
         // return $this->createDestination;
     }
+
+    public function add($author)
+    {
+        var_dump($_SESSION['author_id']);
+        $request = $this->db->prepare('INSERT INTO user (author, password)
+        VALUES (:author, :password)');
+        $request->execute([
+            'author' => $author->getAuthor(),
+            'password' => $author->getPassword(),
+        ]);
+
+        $id = $this->db->lastInsertId();
+        $author->setId($id);
+        $_SESSION['author_id'] = $id;
+    }
 }
