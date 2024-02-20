@@ -13,7 +13,6 @@ isset($_POST["password"]) && !empty($_POST["password"])
 
 ) {
 
-    $review = new Review($db);
     $review = new Review([
     'author' => $_POST['author'],
     'password' => $_POST['password'],
