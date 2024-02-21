@@ -1,4 +1,5 @@
 <?php
+
  class TourOperator {
     private $id;
     private $name;
@@ -46,7 +47,3 @@
         return $this->isPremium;
     }
  }
-
-
-
-?>
