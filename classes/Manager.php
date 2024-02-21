@@ -33,21 +33,6 @@ class Manager {
         // return $this->getAllOperator;
     }
 
-    public function updateOperatorToPremium()
-    {
-
-    }
-
-    public function createTourOperator()
-    {
-        // return $this->createTourOperator;
-    }
-
-    public function createDestination()
-    {
-        // return $this->createDestination;
-    }
-
     public function addUser(User $author)
     {
         $request = $this->db->prepare('INSERT INTO user (author, password)

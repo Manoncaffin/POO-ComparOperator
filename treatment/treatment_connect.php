@@ -15,7 +15,7 @@ isset($_POST["password"]) && !empty($_POST["password"])
     $user = new User([
     'author' => $_POST['author'],
     'password' => $passwordHash,
-    // à gauche : valeur du tableau associatif (clé) dans employe.php// à droite : input name 
+    // à gauche : valeur du tableau associatif (clé) dans User.php// à droite : input name 
 ]);
 
 $manager = new Manager($db);
