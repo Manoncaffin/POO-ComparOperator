@@ -14,7 +14,7 @@ require_once('./connect_interface.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/style.css">
-    <title>Compar Opérator - Page de connexion</title>
+    <title>Compar Opérator - Page admin</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@ require_once('./connect_interface.php');
 
         <section class="container vh-100 d-flex flex-column justify-content-around">
             <div>
-                <form action="./treatment/treatment_connect.php" method="post" class="form">
+                <form action="" method="post" class="form">
                     <div class="avatar">
                         <img src="./img/avatar.jpeg" alt="avatar">
                     </div>

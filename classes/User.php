@@ -1,19 +1,22 @@
 <?php
 
-class Review {
+class User {
     private $id;
-    private $message;
     private $author;
-    private $tourOperatorId;
+    private $password;
 
     public function __construct($data) {
 
         if (isset($data['id'])){
             $this->id = $data['id'];
         }
-        $this->message = $data['message'];
         $this->author = $data['author'];
-        $this->tourOperatorId = $data['tour_operator_id'];
+        $this->password = $data['password'];
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     public function getId()
@@ -21,9 +24,9 @@ class Review {
         return $this->id;
     }
 
-    public function getMessage()
+    public function setAuthor($author)
     {
-        return $this->message;
+        $this->author = $author;
     }
 
     public function getAuthor()
@@ -31,10 +34,16 @@ class Review {
         return $this->author;
     }
 
-    public function getTourOperatorId()
+    public function setPassword($password)
     {
-        return $this->tourOperatorId;
+        $this->password = $password;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
     }
 }
+
 
 ?>

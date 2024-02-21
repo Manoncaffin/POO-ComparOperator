@@ -4,25 +4,25 @@
 require_once('../config/autoload.php');
 require_once('../config/database.php');
 
-session_start(); // car $_SESSION['id_employe'] dans employeManager.php
-
 if(
 
 isset($_POST["author"]) && !empty($_POST["author"]) &&
 isset($_POST["password"]) && !empty($_POST["password"]) 
 
 ) {
+    $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $review = new Review($db);
-    $review = new Review([
+    $user = new User([
     'author' => $_POST['author'],
-    'password' => $_POST['password'],
-    // à gauche : valeur du tableau associatif (clé) dans employe.php// à droite : input name 
+    'password' => $passwordHash,
+    // à gauche : valeur du tableau associatif (clé) dans User.php// à droite : input name 
 ]);
 
-$Manager->add($review);
+$manager = new Manager($db);
 
-header('Location: ./connect_interface.php');
+$manager->addUser($user);
+
+header('Location: ../connect_interface.php');
 
 }
 
