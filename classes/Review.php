@@ -8,7 +8,9 @@ class Review {
 
     public function __construct($data) {
 
-        $this->id = $data['id'];
+        if (isset($data['id'])){
+            $this->id = $data['id'];
+        }
         $this->message = $data['message'];
         $this->author = $data['author'];
         $this->tourOperatorId = $data['tour_operator_id'];

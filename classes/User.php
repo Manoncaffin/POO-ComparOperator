@@ -7,7 +7,9 @@ class User {
 
     public function __construct($data) {
 
-        $this->id = $data['id'];
+        if (isset($data['id'])){
+            $this->id = $data['id'];
+        }
         $this->author = $data['author'];
         $this->password = $data['password'];
     }
