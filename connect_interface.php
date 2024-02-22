@@ -30,7 +30,7 @@ require_once('./connect_interface.php');
             <div>
                 <form action="./treatment/treatment_connect.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/avatar.jpeg" alt="avatar">
+                        <img src="./img/jameson.png" alt="avatar">
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control">

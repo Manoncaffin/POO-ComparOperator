@@ -67,15 +67,42 @@ class Manager {
         // return $this->createReview;
     }
 
-    public function getReviewByOperatorId()
+    public function getReviewByOperatorId($id)
+
     {
-        // return $this->getReviewByOperatorId;
+        $result = $this->db->prepare("SELECT * FROM review WHERE tour_operator_id = :tour_operator_id");
+        $result -> execute([
+            ":tour_operator_id" => $id,
+        ]);
+        return $result->fetchAll();
     }
 
+    public function getAveragePriceByOperatorId($id) {
+        $result = $this->db->prepare("SELECT *
+        FROM destination
+        JOIN tour_operator ON destination.tour_operator_id = tour_operator.id
+        WHERE tour_operator.id = :id");
+        $result -> execute([
+            ":id" => $id,
+        ]);
+        $donnees = $result->fetch();
+        // var_dump($donnees);
+        return $donnees;
+    }
     public function getAllOperator()
     {// return $this->getAllOperator;
         $result = $this->db->query("SELECT * FROM tour_operator WHERE id IN (SELECT tour_operator_id FROM destination)");
         return $result->fetchAll();
         
     }
+
+    public function getUserById($id) {
+        $result = $this->db->prepare("SELECT * FROM user WHERE id = :id");
+        $result -> execute ([
+            ":id" => $id,
+        ]);
+        $donnees = $result->fetch();
+        return $donnees;
+    }
+
 }

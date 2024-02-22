@@ -62,11 +62,11 @@ CREATE TABLE `review` (
 -- Déchargement des données de la table `review`
 --
 
-INSERT INTO `review` (`id`, `message`, `author`, `tour_operator_id`) VALUES
-(1, 'Super voyage, prestation au top !!', 'Michel', 2),
-(2, "Tout est inclus dans le prix, c'est cool, je recommande", 'Paul', 3),
-(3, 'Un peu cher, mais ça vaut le coup', 'Paul', 2),
-(4, 'arnaque!!!! a fuire!!!', 'René', 2);
+INSERT INTO `review` (`id`, `message`, `author_id`, `tour_operator_id`) VALUES
+(1, 'C\'est génial !!', 'Anthony', 2),
+(2, 'L\'Algérie c\'est le meilleur pays', 'Kamel', 3),
+(3, 'Miaou', 'chat', 2),
+(4, 'J\'en ai marre', 'Alexis', 2);
 
 -- --------------------------------------------------------
 
