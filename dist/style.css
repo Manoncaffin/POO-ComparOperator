@@ -143,6 +143,74 @@ select, input {
   width: 200px;
 }
 
+.admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-admin {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.name-fied {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name-fied div {
+  display: flex;
+  flex-direction: column;
+}
+.name-fied div input {
+  width: 49%;
+}
+
+label {
+  margin-bottom: 6px;
+}
+
+input {
+  margin-bottom: 5px;
+  padding: 5px;
+outline: 0;
+border: 1px solid black
+}
+
+input:focus {
+  border: 1px solid green;
+}
+
+input[type="submit"]{
+  margin-top: 15px;
+  background-color: green;
+  color: white;
+  border: 1px solid blue;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+p a {
+  text-decoration: 0;
+
+}
+
+p a:hover{
+  text-decoration: underline;
+}
 @media screen and (min-width: 1100px) {
   .logo img {
     width: 250px;
