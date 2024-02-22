@@ -17,9 +17,7 @@
     align-items: center;
     padding: 20px;
     color: white;
-    margin-bottom: 80px;
-  }
-
+    margin-bottom: 80px; }
   .logo img {
     width: 5rem;
   }
@@ -72,17 +70,21 @@
     top: -170px;
     width: 330px;
     padding: 3px;
-    font-weight: bold;
-  }
+    font-weight: bold; 
+  } 
 }
+
+  
+
 
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: 'Tauri';
-  background-color: rgba(186, 238, 212, 0.508);
+  background-color: rgba(186, 238, 212, 0.508); 
 }
+
 
 html .btn,
 body .btn {
@@ -121,13 +123,18 @@ body .btn {
   width: 400px;
 }
 
+.form input.form-control {
+  width: 400px; }
+
 .connect {
-  text-align: center;
+  text-align: center; 
 }
 
 .connect div {
-  margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
+
+
 
 footer>p {
   color: #00b68e;
