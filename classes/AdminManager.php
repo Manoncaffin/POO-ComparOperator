@@ -10,12 +10,12 @@ class AdminManager {
 
     public function createDestination(Destination $destination)
     {
-        $request = $this->db->prepare('INSERT INTO destination (location, price, tourOperatorId)
-        VALUES (:location, :price, :tourOperatorId)');
+        $request = $this->db->prepare('INSERT INTO destination (location, price, tour_operator_id)
+        VALUES (:location, :price, :tour_operator_id)');
         $request->execute([
             'location' => $destination->getLocation(),
             'price' => $destination->getPrice(),
-            'tourOperatorId' => $destination->getTourOperatorId(),
+            'tour_operator_id' => $destination->getTourOperatorId(),
         ]);
     }
 

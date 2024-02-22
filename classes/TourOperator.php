@@ -9,7 +9,11 @@
     private $isPremium;
 
     public function __construct($data) {
-        // $this->data = $data;
+        $this->name = $data['name'];
+       $this->link = $data['link'];
+       $this->gradeCount = $data['gradeCount'];
+       $this->gradeTotal = $data['gradeTotal'];
+       $this->isPremium = $data['isPremium'];
     }
     
     public function getId()

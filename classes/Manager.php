@@ -32,7 +32,6 @@ class Manager {
 
     public function getAllDestination()
     {
-        // return $this->getAllDestination;
         $result = $this->db->query("SELECT * FROM destination");
         return $result->fetchAll();
     }
@@ -57,7 +56,6 @@ class Manager {
 
     public function getOperatorByDestination()
     {
-        // return $this->getOperatorByDestination;
         $result = $this->db->query("SELECT * FROM tour_operator");
         return $result->fetchAll();
     }
@@ -73,7 +71,7 @@ class Manager {
     }
 
     public function getAllOperator()
-    {// return $this->getAllOperator;
+    {
         $result = $this->db->query("SELECT * FROM tour_operator WHERE id IN (SELECT tour_operator_id FROM destination)");
         return $result->fetchAll();
         

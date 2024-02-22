@@ -31,10 +31,10 @@ require_once('./config/database.php');
                     <div class="avatar">
                         <img src="./img/avatar.jpeg" alt="avatar">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group user">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group user">
                         <input type="password" placeholder="Mot de passe" name="password" class="form-control">
                     </div>
 
