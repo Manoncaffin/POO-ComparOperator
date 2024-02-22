@@ -28,7 +28,7 @@ $alldestinations = $manager->getAllDestination();
         <nav>
             <ul>
                 <li><a href="tour_operators.php">Tours Opérateurs</a></li>
-                <li><a href="login.php">Me connecter</a></li>
+                <li><a href="./connect_interface.php">Me connecter</a></li>
             </ul>
         </nav>
     </header>
