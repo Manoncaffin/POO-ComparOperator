@@ -49,7 +49,7 @@ require_once('./config/database.php');
                 </form>
             </div>
             <footer>
-                <p>Compar Opérator 2023</p>
+                <p>Compar Opérator 2023 - </p>
             </footer>
         </section>
 
