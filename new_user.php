@@ -13,7 +13,7 @@ require_once('./config/database.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/style.css">
-    <title>Compar Opérator - Page de connexion</title>
+    <title>Compar Opérator - Page d'inscrption</title>
 </head>
 
 <body>
@@ -37,16 +37,13 @@ require_once('./config/database.php');
                     <div class="form-group">
                         <input type="password" placeholder="Mot de passe" name="password" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Confirmez votre mot de passe" name="confirm-password" class="form-control">
+                    </div>
 
                     <div class="connect">
                         <div>
-                            <button class="btn btn-primary" a href="./index.php" type="submit">Se connecter</button>
-                        </div>
-                        <div>
-                            <p>Nouvel utilisateur ?</p>
-                        </div>
-                        <div>
-                            <p><a href="./new_user.php" class="text-decoration-none text-black">S'inscrire</a></p>
+                            <button class="btn" a href="./index.php" type="submit">Valider inscription</button>
                         </div>
                     </div>
                 </form>

@@ -7,7 +7,8 @@ require_once('../config/database.php');
 if(
 
 isset($_POST["author"]) && !empty($_POST["author"]) &&
-isset($_POST["password"]) && !empty($_POST["password"]) 
+isset($_POST["password"]) && !empty($_POST["password"]) &&
+isset($_POST["confirm_password"]) && !empty($_POST["confirm_password"])
 
 ) {
     $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -18,11 +19,25 @@ isset($_POST["password"]) && !empty($_POST["password"])
     // à gauche : valeur du tableau associatif (clé) dans User.php// à droite : input name 
 ]);
 
-$manager = new Manager($db);
+$confirmPassword = $_POST["confirm_password"];
 
-$manager->addUser($user);
+ // Vérifiez si les deux champs de mot de passe sont identiques
+ if ($user->getPassword() === $confirmPassword) {
+    // Les mots de passe sont identiques, procédez au traitement
+    $manager = new Manager($db);
+    $manager->addUser($user);
 
-header('Location: ../connect_interface.php');
+    header('Location: ../index.php');
+    exit();
+
+} else {
+    echo "Les mots de passe ne correspondent pas.";
+}
+} else {
+echo "Veuillez remplir tous les champs obligatoires.";
+
+header('Location: ../index.php');
+exit();
 
 }
 

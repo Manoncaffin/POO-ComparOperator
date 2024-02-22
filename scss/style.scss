@@ -103,22 +103,30 @@ padding: 3px;
 font-weight: bold;
 }
 
-    }$vert-clair: rgba(186, 238, 212, 0.508);
+}
+
+$vert-clair: rgba(186, 238, 212, 0.508);
 $vert-fonce: rgba(0, 182, 142, 100);
 
-// VERSION MOBILE
+// VERSION MOBILE MANON
 html,
 body {
     margin: 0;
     padding: 0;
     font-family: 'Tauri';
     background-color: $vert-clair;
+
+    .btn {
+        background-color: $vert-fonce;
+    }
 }
 
 .logo img {
     width: 200px;
     padding: 20px;
 }
+
+
 
 .container {
     padding: 20px;
@@ -143,15 +151,15 @@ body {
     }
 }
 
+.form input.form-control {
+    width: 400px; 
+}
+
 .connect {
     text-align: center;
 
     div {
         margin-bottom: 10px;
-    }
-
-    .btn {
-        background-color: $vert-fonce;
     }
 }
 
