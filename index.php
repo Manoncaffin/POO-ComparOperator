@@ -48,7 +48,7 @@ $alldestinations = $manager->getAllDestination();
                     <div class="destination__informations">
                         <div>
                             <p><?php echo $alldestination['location'] ?></p>
-                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime quam ex beatae debitis neque.se.
+                            <p> Loreem ipsum, dolor sit amet consectetur adipisicing elit. Maxime quam ex beatae debitis neque.se.
                         </div>
                         <div>
                             <p>A partir de <?php echo $alldestination['price'] ?> €</p>
