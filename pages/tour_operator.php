@@ -67,7 +67,7 @@ $back_link_url = isset($id) ? "destination.php?destination_id=$id" : "../index.p
         </div>
         <nav>
             <ul>
-                <li><a href="../connect_interface.php">Me connecter</a></li>
+                <li><a href="connect_interface.php">Me connecter</a></li>
             </ul>
         </nav>
     </header>

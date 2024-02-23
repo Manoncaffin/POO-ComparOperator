@@ -25,7 +25,7 @@ require_once('../config/database.php');
 
     <main>
 
-        <section class="container background_connect vh-100 d-flex flex-column justify-content-around">
+        <section class="container_background_connect vh-100 d-flex flex-column justify-content-around">
             <div>
                 <form action="../treatment/treatment_connexion.php" method="post" class="form">
                     <div class="avatar">

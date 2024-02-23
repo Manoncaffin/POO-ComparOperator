@@ -8,6 +8,18 @@
 
 
 /* Ajout de styles pour la section #index */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(186, 238, 212, 0.508);
+  font-family: 'Tauri';
+}
 #index {
   display: flex;
   flex-wrap: wrap;
@@ -309,16 +321,7 @@ nav ul li a:hover {
 
 /* Ajout de styles pour les articles de destination */
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background-color: rgba(186, 238, 212, 0.508);
-}
 
 .body-admin {
   font-family: 'Tauri';
@@ -336,7 +339,7 @@ body .btn {
   padding: 20px;
 }
 
-.container {
+.container_background_connect {
   padding: 20px;
   justify-content: center;
 }

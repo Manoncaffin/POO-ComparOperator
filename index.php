@@ -37,7 +37,7 @@ $user = $manager->findUserById($_SESSION['user_id']);
         <nav>
             <ul>
                 <li><a href="./pages/connect_interface.php">Me connecter</a></li>
-                <li><a href="./treatment/logout.php">Se déconnecter</a></li>
+                <li><a href="./pages/connect_interface.php">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>
