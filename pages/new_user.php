@@ -1,7 +1,7 @@
 <?php
 
-require_once('./config/autoload.php');
-require_once('./config/database.php');
+require_once('../config/autoload.php');
+require_once('../config/database.php');
 
 ?>
 
@@ -12,14 +12,14 @@ require_once('./config/database.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="stylesheet" href="../dist/style.css">
     <title>Compar Opérator - Page d'inscrption</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-        <a href="../index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
+        <a href="../index.php"><img src="../img/logo_compar_operator.svg" alt="ComparOperator"></a>
         </div>
     </header>
 
@@ -27,9 +27,9 @@ require_once('./config/database.php');
 
         <section class="container background_connect vh-100 d-flex flex-column justify-content-around">
             <div>
-                <form action="./treatment/treatment_add_user.php" method="post" class="form">
+                <form action="../treatment/treatment_add_user.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/avatar__brieuc.png" alt="avatar">
+                        <img src="../img/avatar__brieuc.png" alt="avatar">
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control" required>

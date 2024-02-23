@@ -28,14 +28,14 @@ $tour_operators = $manager->getOperatorByDestination($destination_id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="stylesheet" href="../dist/style.css">
     <title>Tour Operators for <?php echo $destination['location']; ?></title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="../index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
+            <a href="../index.php"><img src="../img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
         </div>
         <nav>
             <ul>

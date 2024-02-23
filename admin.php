@@ -34,86 +34,6 @@ $operators = $manager->getAllOperator();
     <main>
 
         <section class="flex-column">
-            <!-- <form action="./treatment/treatment_operator.php" method="post" class="form">
-                <div class="form-group admin row d-flex justify-content-start flex-column">
-                    <label for="name" class="col-auto col-form-label col-form-label-sm">Nom du Tour Opérateur</label>
-                    <input type="text" name="name" required>
-                </div>
-
-                <div class="form-group admin row d-flex justify-content-start flex-column">
-                    <label for="link" class="col-auto col-form-label col-form-label-sm">Lien</label>
-                    <input type="text" name="link" required>
-                </div>
-
-                <div class="form-group admin row d-flex justify-content-start flex-column">
-                    <label for="gradeCount" class="col-auto col-form-label col-form-label-sm">Nombre de notes</label>
-                    <input type="number" name="gradeCount" required>
-                </div>
-
-                <div class="form-group admin row d-flex justify-content-start flex-column">
-                    <label for="gradeTotal" class="col-auto col-form-label col-form-label-sm">Total des notes</label>
-                    <input type="number" name="gradeTotal" required>
-                </div>
-
-                <div class="form-group admin row d-flex justify-content-start flex-column">
-                    <label for="isPremium" class="col-auto col-form-label col-form-label-sm">Premium</label>
-                    <select name="isPremium" required>
-                        <option value="1">Oui</option>
-                        <option value="0">Non</option>
-                    </select>
-                </div>
-
-                <div>
-                    <button class="btn mt-3" type="submit">Ajouter Tour Opérateur</button>
-                </div>
-            </form>
-
-            <form action="./treatment/treatment_operator.php" method="post" class="form">
-                <div class="form-group admin row d-flex justify-content-start">
-                    <label for="text" class="col-auto col-form-label col-form-label-sm">Changer le Tour Opérator</label>
-                    <select name="tour_operator_id">
-                        <option value="none" selected>--</option>
-                        <option value="tour_operator_id">Salaun Holidays</option>
-                        <option value="tour_operator_id">Fram</option>
-                        <option value="tour_operator_id">Heliades</option>
-                    </select>
-                </div>
-
-                <div class="form-group admin row d-flex justify-content-start">
-                    <label for="text" class="col-auto col-form-label col-form-label-sm">Passer en premium</label>
-                    <select name="is_premium">
-                        <option value="none" selected>--</option>
-                        <option value="first">Oui</option>
-                        <option value="second">Non</option>
-                    </select>
-                    <div>
-                        <a href="./treatment/treatment_destination.php" class="text-decoration-none text-black"><button class="btn mt-3" type="submit">Ajouter</button></a>
-                    </div>
-                </div>
-            </form>
-
-
-            <form action="./treatment/treatment_destination.php" method="post" class="form">
-                <div class="form-group admin row d-flex justify-content-start">
-                    <label for="text" class="col-auto col-form-label col-form-label-sm">Sélectionner une destination</label>
-                    <select name="tour_operator_id">
-                        <option value="none" selected>--</option>
-                        <?php foreach ($operators as $operator) { ?>
-                            <option value="<?php echo $operator['id'] ?>"><?php echo $operator['name'] ?> </option>
-                        <?php  }  ?>
-                    </select>
-
-                    <div class="form-group admin row d-flex justify-content-start">
-                        <label for="text" class="col-auto col-form-label col-form-label-sm">Prix</label>
-                        <input type="number" placeholder="€" name="price">
-                    </div>
-                    <div>
-                        <a href="./treatment/treatment_operator.php" class="text-decoration-none text-black"><button class="btn mt-3" type="submit">Ajouter</button></a>
-                    </div>
-                </div>
-            </form> -->
-
-
             <div class="container">
 
                 <form action="./treatment/treatment_operator.php" method="post" class="form-admin">
@@ -129,15 +49,15 @@ $operators = $manager->getAllOperator();
                     </div>
                     <div class="name-field">
                         <label for="gradeCount">Nombre de notes</label>
-                        <input type="number" name="gradeCount" required class="w-100">
+                        <input type="number" name="grade_count" required class="w-100">
                     </div>
                     <div class="name-field">
                         <label for="gradeTotal">Total des points</label>
-                        <input type="number" name="gradeTotal" required class="w-100">
+                        <input type="number" name="grade_total" required class="w-100">
                     </div>
                     <div class="name-field">
-                        <label>Premium</label>
-                        <select name="isPremium" required class="w-100">
+                        <label for="is_premium">Premium</label>
+                        <select name="is_premium" required class="w-100">
                             <option value="none" selected>--</option>
                             <option value="1">Oui</option>
                             <option value="0">Non</option>
@@ -146,23 +66,23 @@ $operators = $manager->getAllOperator();
 
                     <!-- AJOUTER LIEN  -->
                     <div>
-                        <a href="#" class="text-decoration-none text-black"><button class="btn mt-3" type="submit">Ajouter Tour Opérator</button></a>
+                        <button class="btn mt-3" type="submit">Ajouter Tour Opérator</button>
                     </div>
 
                     <hr>
 
                     <div class="name-field">
-                        <label for="text">Sélectionner un Tour Opérator</label>
+                        <label for="tour_operator_id">Sélectionner un Tour Opérator</label>
                         <select name="tour_operator_id" required class="w-100">
                             <option value="none" selected>--</option>
-                            <option value="tour_operator_id">Salaun Holidays</option>
-                            <option value="tour_operator_id">Fram</option>
-                            <option value="tour_operator_id">Heliades</option>
+                            <?php foreach ($operators as $operator) { ?>
+                                <option value="<?php echo $operator['id'] ?>"><?php echo $operator['name'] ?> </option>
+                            <?php  }  ?>
                         </select>
                     </div>
                     <div class="name-field">
-                        <label for="text">Premium</label>
-                        <select name="isPremium" required class="w-100">
+                        <label for="update_premium">Premium</label>
+                        <select name="update_premium" required class="w-100">
                             <option value="none" selected>--</option>
                             <option value="1">Oui</option>
                             <option value="0">Non</option>
@@ -170,7 +90,7 @@ $operators = $manager->getAllOperator();
                     </div>
                     <!-- AJOUTER LIEN -->
                     <div>
-                        <a href="#" class="text-decoration-none text-black"><button class="btn mt-3" type="submit">Valider les modifications</button></a>
+                        <button class="btn mt-3" type="submit">Valider les modifications</button>
                     </div>
                 </form>
 
@@ -178,26 +98,9 @@ $operators = $manager->getAllOperator();
                 <!-- REVOIR -->
                 <form action="./treatment/treatment_destination.php" method="post" class="form-admin">
                     <div class="name-field">
-                        <label for="text">Sélectionner une destination</label>
-                        <select name="tour_operator_id" required class="w-100">
-                            <option value="none" selected>--</option>
-                            <option value="location">Londres</option>
-                            <option value="location">Vienne</option>
-                            <option value="location">Rome</option>
-                            <option value="location">Monaco</option>
-                            <option value="location">Tunis</option>
-                        </select>
-
-                    </div>
-
-                    <div class="name-field">
                         <label>Ajouter une destination</label>
-                        <select name="destination" required class="w-100">>
-                            <option value="none" selected>--</option>
-                            <?php foreach ($destinations as $destination) { ?>
-                                <option value="<?php echo $destination['location'] ?>"><?php echo $destination['name'] ?> </option>
-                            <?php  }  ?>
-                        </select>
+                        <input type="text" name="location" required class="w-100">
+                        
                     </div>
                     <!-- FIN _ -->
 
@@ -206,7 +109,7 @@ $operators = $manager->getAllOperator();
                         <input type="number" required placeholder="€" name="price" required class="w-100">
                     </div>
                     <div>
-                        <a href="./treatment/treatment_operator.php" class="text-decoration-none text-black"><button class="btn mt-3" type="submit">Valider les modifications</button></a>
+                        <button class="btn mt-3" type="submit">Valider les modifications</button>
                     </div>
                 </form>
 

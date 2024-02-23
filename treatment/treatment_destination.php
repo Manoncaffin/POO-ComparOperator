@@ -14,11 +14,12 @@ $destination = new Destination([
     'price' => $_POST['price'],
     'tour_operator_id' => intval($_POST['tour_operator_id']),
 ]);
-var_dump($destination);
+// var_dump($destination);
 
     $adminManager = new AdminManager($db);
     $adminManager->createDestination($destination);
 
 }
 
+header('Location:../admin.php');
 ?>
