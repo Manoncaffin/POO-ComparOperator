@@ -38,7 +38,7 @@ class Manager {
     }
 
     public function getDestinationById($id){
-        var_dump($id);
+        // var_dump($id);
         $result = $this->db->prepare("SELECT * FROM destination WHERE id = :id");
         $result -> execute([
             ":id" => $id,
@@ -70,11 +70,11 @@ class Manager {
     public function getReviewByOperatorId($id)
 
     {
-        $result = $this->db->prepare("SELECT * FROM review WHERE tour_operator_id = :tour_operator_id");
+        $result = $this->db->prepare("SELECT * FROM review JOIN user ON user.id = review.author_id WHERE tour_operator_id = :tour_operator_id");
         $result -> execute([
             ":tour_operator_id" => $id,
         ]);
-        return $result->fetchAll();
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAveragePriceByOperatorId($id) {

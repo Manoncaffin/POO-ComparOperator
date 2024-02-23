@@ -3,12 +3,17 @@
 require_once "./config/autoload.php";
 require_once "./config/database.php";
 
+// Stocker l'URL actuelle dans la session
+$_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
+
+// Redirection vers la page de connexion
+// header('Location: connect_interface.php');
+// exit;
+
 $manager = new Manager($db);
 $alldestinations = $manager->getAllDestination();
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,22 +21,24 @@ $alldestinations = $manager->getAllDestination();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/style.css">
     <title>Destinations</title>
 </head>
 
 <body>
-    <header>
+<div id="index">
+<header id=header>
         <div class="logo">
-            <a href="index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
+            <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
         </div>
         <nav>
             <ul>
-                <li><a href="tour_operators.php">Tours Opérateurs</a></li>
                 <li><a href="./connect_interface.php">Me connecter</a></li>
             </ul>
         </nav>
     </header>
+
     <h1>Destinations</h1>
     <div class="destinations">
 
@@ -58,9 +65,6 @@ $alldestinations = $manager->getAllDestination();
             </article>
         <?php } ?>
     </div>
-    <footer>
-        <p>ComparOperator 2024.</p>
-    </footer>
-</body>
-
-</html>
+        </div>
+    <?php
+    include "./partials/footer.php";

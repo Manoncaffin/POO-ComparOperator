@@ -5,80 +5,309 @@
 /*========== Font and typography ==========*/
 /*.5rem = 8px | 1rem = 16px ...*/
 /*========== Font weight ==========*/
-@media screen and (max-width: 600px) {
-  body {
-    margin: 0;
-    background-color: white;
-  }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: white;
-    margin-bottom: 80px; 
-  }
-  
-  .logo img {
-    width: 5rem;
-  }
 
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-  }
-
-  nav ul li a {
-    color: black;
-    text-decoration: none;
-  }
-
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5rem;
-  }
-
-  .destination__image a img {
-    position: relative;
-    height: 400px;
-    width: 350px;
-  }
-
-  .destination__container {
-    max-width: 800px;
-    margin: 0 auto;
-    /*Centrer horizontalement */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .destination__informations {
-    background-color: rgba(255, 255, 255, 0.71);
-    position: relative;
-    top: -170px;
-    width: 330px;
-    padding: 3px;
-
-    font-weight: bold; 
-  } 
+/* Ajout de styles pour la section #index */
+#index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-  
 
+h1 {
+  font-style: italic;
+  font-weight: 400;
+}
+.destinations {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de s'enrouler sur plusieurs lignes */
+  justify-content: space-around; /* Distribue les éléments de manière égale sur la ligne */
+}
+
+.destinations article {
+  width: calc(33.33% - 20px); /* Calcule la largeur de chaque article (un tiers de la largeur de son parent moins les marges) */
+  margin: 10px; /* Ajoutez une marge autour de chaque article */
+}
+
+.destinations article:hover {
+  transform: translateY(-5px);
+  
+}
+.destination__container {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.destination__image {
+  text-align: center;
+}
+
+.destination__image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.destination__informations {
+  padding: 10px;
+}
+
+.destination__informations p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.destination__informations p.location {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.destination__informations p.price {
+  color: #00b68e;
+  font-size: 18px;
+}
+
+
+.destination__informations p:first-child {
+  font-size: 1.2rem; /* Augmente la taille du texte */
+  font-weight: bold; /* Met le texte en gras */
+}
+
+/* Ajout de styles pour la section principale avec l'ID destination */
+#destination {
+  display: flex;
+  flex-direction: column; /* Affichage en colonne pour les éléments enfants */
+  align-items: center; /* Centrage horizontal des éléments enfants */
+  padding: 20px;
+}
+
+/* Styles pour le header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Prend toute la largeur de la page */
+  margin-top: -30px;
+}
+
+.logo img {
+  width: 150px; /* Taille du logo */
+  order: 1; /* Pour placer le logo en premier */
+}
+nav {
+  order: 2; /* Pour placer le menu de navigation en deuxième position */
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #333; /* Couleur du texte des liens */
+  text-decoration: none;
+  font-weight: bold; /* Texte en gras */
+  transition: color 0.3s ease; /* Transition pour la couleur du texte */
+}
+
+nav ul li a:hover {
+  color: #00b68e; /* Couleur du texte des liens au survol */
+}
+
+/* Styles pour la section de destination */
+#destination {
+  padding: 20px;
+}
+
+/* Styles pour le titre */
+#destination h1 {
+  color: #006400; /* Couleur du titre */
+  margin-bottom: 20px; /* Espacement en dessous du titre */
+}
+
+/* Styles pour les informations de la destination */
+.destination-info {
+  margin-bottom: 30px; /* Espacement en dessous des informations */
+}
+
+.destination-info img {
+  width: 100%; /* Pour assurer que l'image occupe toute la largeur du conteneur */
+  max-width: 600px; /* Largeur maximale de l'image */
+  height: auto; /* Ajustement automatique de la hauteur */
+  display: block; /* Pour éviter les espaces vides */
+  margin-bottom: 10px; /* Espacement en dessous de l'image */
+}
+
+.destination-info p {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Styles pour la liste des tours opérateurs */
+.tour-operators {
+  margin-bottom: 30px; /* Espacement en dessous de la liste des tours opérateurs */
+}
+
+.tour-operators h2 {
+  color: #006400; /* Couleur du titre */
+  margin-bottom: 10px; /* Espacement en dessous du titre */
+}
+
+.tour-operators ul {
+  list-style-type: none; /* Supprimer les puces de la liste */
+  padding: 0;
+  margin: 0;
+}
+
+.tour-operators ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 20px; /* Espacement entre chaque élément */
+}
+
+
+
+.tour-operators ul li img {
+  width: 100px; /* Taille des images des tours opérateurs */
+  height: auto; /* Ajustement automatique de la hauteur */
+  margin-bottom: 10px; /* Espacement en dessous de chaque image */
+}
+
+
+/* Styles pour le lien du tour opérateur */
+.tour-operators ul li a {
+  color: #000; /* Couleur du texte en noir */
+  font-weight: bold; /* Texte en gras */
+  font-size: 18px; /* Taille de la police */
+  text-decoration: none; /* Supprimer le soulignement */
+}
+
+/* Styles pour le bouton "Voir" */
+.button__voir {
+  background-color: #fff; /* Couleur de fond blanche */
+  color: #006400; /* Couleur du texte */
+  padding: 10px 20px; /* Espacement interne */
+  border: 2px solid #006400; /* Bordure solide */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour la couleur de fond et de texte */
+}
+
+.button__voir:hover {
+  background-color: #006400; /* Couleur de fond au survol */
+  color: #fff; /* Couleur du texte au survol */
+}
+
+/* Centrage horizontal des boutons et des liens */
+.tour-operators ul li button, .tour-operators ul li a {
+  text-align: center;
+}
+
+
+#tour_operator {
+  padding: 20px;
+}
+
+/* Styles pour le titre */
+#tour_operator h1 {
+  color: #006400; /* Couleur du titre */
+  margin-bottom: 20px; /* Espacement en dessous du titre */
+}
+
+/* Styles pour les informations du tour opérateur */
+.tour-operator-info {
+  margin-bottom: 30px; /* Espacement en dessous des informations */
+}
+
+.tour-operator-info p {
+  margin: 0; /* Supprimer les marges par défaut */
+  font-size: 16px; /* Taille de la police */
+}
+
+.tour-operator-info h2 {
+  color: #006400; /* Couleur du titre */
+  margin-bottom: 10px; /* Espacement en dessous du titre */
+}
+
+/* Styles pour la liste des avis */
+.tour-operator-info ul {
+  list-style-type: none; /* Supprimer les puces de la liste */
+  padding: 0;
+  margin: 0;
+}
+
+.tour-operator-info ul li {
+  margin-bottom: 20px; /* Espacement entre chaque élément */
+}
+
+/* Styles pour le formulaire d'avis */
+.write-review {
+  margin-bottom: 30px; /* Espacement en dessous du formulaire */
+}
+
+.write-review h2 {
+  color: #006400; /* Couleur du titre */
+  margin-bottom: 10px; /* Espacement en dessous du titre */
+}
+
+.write-review form {
+  max-width: 500px; /* Largeur maximale du formulaire */
+}
+
+.write-review textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.write-review input[type="number"] {
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.write-review button {
+  padding: 10px 20px;
+  background-color: #006400; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none;
+  cursor: pointer;
+}
+
+.write-review button:hover {
+  background-color: #004d00; /* Couleur de fond au survol */
+}
+
+/* Styles pour le lien premium */
+.premium-link {
+  margin-top: 30px; /* Espacement au-dessus du lien */
+}
+
+.premium-link a {
+  color: #006400; /* Couleur du lien */
+}
+
+.premium-link a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Ajout de styles pour les articles de destination */
 
 html,
 body {
@@ -163,3 +392,5 @@ select, input {
     width: fit-content;
   }
 }
+
+ 

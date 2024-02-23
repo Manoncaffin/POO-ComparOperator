@@ -13,7 +13,7 @@ require_once('./config/database.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/style.css">
-    <title>Compar Opérator - Page d'inscrption</title>
+    <title>Compar Opérator - Page d'inscription</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@ require_once('./config/database.php');
             <div>
                 <form action="./treatment/treatment_connect.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/avatar.jpeg" alt="avatar">
+                        <img src="./img/jameson.png" alt="avatar">
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control">

@@ -21,55 +21,68 @@ $tour_operators = $manager->getOperatorByDestination($destination_id);
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/style.css">
-    <title>Tour Operators for <?php echo $destination['location']; ?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../dist/style.css">
+    <title>Destinations</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
+    <div id="destination">
+        <header id=header>
+            <div class="logo">
+                <a href="../index.php"><img src="../img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../connect_interface.php">Me connecter</a></li>
+                </ul>
+            </nav>
+        </header>
+        <a href="destination.php" class="back-link">&#8592; Retour aux destinations</a>
+        <h1><?php echo $destination['location']; ?></h1>
+
+        <div class="destination-info">
+
+            <img src="../img/<?php echo $destination['location'] . ".webp" ?>" alt="image">
+            <p>Prix à partir de <?php echo $destination['price']; ?> €</p>
         </div>
-        <nav>
+
+        <div class="tour-operators">
+            <h2>Tours Opérateurs :</h2>
             <ul>
-                <li><a href="tour_operators.php">Tours Opérateurs</a></li>
-                <li><a href="login.php">Me connecter</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <h1>Tours Opérateurs pour <?php echo $destination['location']; ?></h1>
+                <?php foreach ($tour_operators as $operator) :
+                    // Récupérer les informations du tour opérateur depuis la base de données
+                    // Suppose que vous avez déjà une connexion à la base de données et que vous avez récupéré les informations du tour opérateur dans $tour_operator
 
-    <div class="destination-info">
-        <h2><?php echo $destination['location']; ?></h2>
-        <p>Prix à partir de <?php echo $destination['price']; ?> €</p>
-    </div>
+                    $is_premium = $operator['is_premium'];
 
-    <div class="tour-operators">
-        <h2>Tours Opérateurs :</h2>
-        <ul>
-            <?php foreach ($tour_operators as $operator) : ?>
-                <li>
-                    <a href="<?php echo $operator['link']; ?>">
+                    // Vérifier si le tour opérateur est premium
+                    if ($is_premium) {
+                        // Afficher le lien vers le site officiel du tour opérateur
+                        echo '<a href="' . $operator['link'] . '">Visitez le site officiel</a>';
+                        
+                    }
+                ?>
+                    <li>
+
+                        <img src="../img/<?php echo $operator['name'] . "__small.png" ?>" alt="image">
+
+
                         <?php echo $operator['name']; ?>
-                    </a>
-<!-- prix  -->
-                    <button><a href="./tour_operator.php?tour_operator_id=<?php echo $operator['id']; ?>">Voir</a></button>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+
+                        <!-- prix  -->
+                        <button class="button__voir"><a href="./tour_operator.php?tour_operator_id=<?php echo $operator['id']; ?>">Voir</a></button>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     </div>
 
-    <footer>
-        <p>ComparOperator 2024.</p>
-    </footer>
-</body>
-
-</html>
+    <?php include "../partials/footer.php";

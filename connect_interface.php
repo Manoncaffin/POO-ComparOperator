@@ -3,6 +3,8 @@
 require_once('./config/autoload.php');
 require_once('./config/database.php');
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,13 +31,16 @@ require_once('./config/database.php');
             <div>
                 <form action="./treatment/treatment_connect.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/jameson.png" alt="avatar">
+                        <img src="./img/avatar-joan.png" alt="avatar">
                     </div>
                     <div class="form-group">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="password" placeholder="Mot de passe" name="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Mot de passe" name="confirm_password" class="form-control">
                     </div>
 
                     <div class="connect">
@@ -46,7 +51,7 @@ require_once('./config/database.php');
                             <p>Nouvel utilisateur ?</p>
                         </div>
                         <div>
-                            <p><a href="./new_user.php" class="text-decoration-none text-black">S'inscrire</a></p>
+                            <p><a href="./new_user.php" class="text-decoration-none text-black"><span>S'inscrire</span></a></p>
                         </div>
                     </div>
                 </form>
