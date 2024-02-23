@@ -7,7 +7,9 @@ class Destination {
     private $tourOperatorId;
 
     public function __construct($data) {
-        // $this->data = $data;
+       $this->location = $data['location'];
+       $this->price = $data['price'];
+       $this->tourOperatorId = $data['tour_operator_id'];
     }
 
     public function getId()

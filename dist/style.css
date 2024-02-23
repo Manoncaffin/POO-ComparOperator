@@ -313,8 +313,16 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(186, 238, 212, 0.508);
+}
+
+.body-admin {
   font-family: 'Tauri';
-  background-color: rgba(186, 238, 212, 0.508); 
+  background-color: rgba(186, 238, 212, 0.508);
 }
 
 
@@ -330,7 +338,6 @@ body .btn {
 
 .container {
   padding: 20px;
-  display: flex;
   justify-content: center;
 }
 
@@ -356,25 +363,100 @@ body .btn {
 }
 
 .form input.form-control {
-  width: 400px; }
+  width: 400px;
+}
 
 .connect {
-  text-align: center; 
+  text-align: center;
 }
 
 .connect div {
-    margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-
-
 
 footer>p {
-  color: #00b68e;
+  display: flex;
+  justify-content: start;
 }
 
-select, input {
+select,
+input {
   height: 35px;
-  width: 200px;
+  width: 450px;
+}
+
+.admin {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-admin {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.name-fied {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name-fied div {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-fied div input {
+  width: 49%;
+}
+
+label {
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  margin-bottom: 5px;
+  padding: 5px;
+  outline: 0;
+  border: 1px solid black
+}
+
+input:focus {
+  border: 1px solid green;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
+  background-color: green;
+  color: white;
+  border: 1px solid blue;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+p a {
+  text-decoration: 0;
+
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+a button {
+  width: 250px;
 }
 
 @media screen and (min-width: 1100px) {

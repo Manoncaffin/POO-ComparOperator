@@ -22,17 +22,26 @@ class Manager {
         $_SESSION['user_id'] = $id;
     }
 
-    public function findUserById(User $user)
+    public function findUserById($id)
     {
         $request = $this ->db->prepare('SELECT id, author FROM user WHERE id = :id');
         $request->execute([
-            'id' => $user->getId(),
+            'id' => $id,
         ]);
+        return $request->fetch();
+    }
+
+    public function connectUser(User $user)
+    {
+        $request = $this->db->prepare('SELECT * FROM user WHERE author = :author');
+        $request->execute([
+            'author' => $user->getAuthor(),
+        ]);
+        return $request->fetch();
     }
 
     public function getAllDestination()
     {
-        // return $this->getAllDestination;
         $result = $this->db->query("SELECT * FROM destination");
         return $result->fetchAll();
     }
@@ -57,7 +66,6 @@ class Manager {
 
     public function getOperatorByDestination()
     {
-        // return $this->getOperatorByDestination;
         $result = $this->db->query("SELECT * FROM tour_operator");
         return $result->fetchAll();
     }
@@ -90,7 +98,7 @@ class Manager {
         return $donnees;
     }
     public function getAllOperator()
-    {// return $this->getAllOperator;
+    {
         $result = $this->db->query("SELECT * FROM tour_operator WHERE id IN (SELECT tour_operator_id FROM destination)");
         return $result->fetchAll();
         

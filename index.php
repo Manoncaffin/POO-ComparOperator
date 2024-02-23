@@ -13,6 +13,8 @@ $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
 $manager = new Manager($db);
 $alldestinations = $manager->getAllDestination();
 
+$user = $manager->findUserById($_SESSION['user_id']);
+
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +36,15 @@ $alldestinations = $manager->getAllDestination();
         </div>
         <nav>
             <ul>
-                <li><a href="./connect_interface.php">Me connecter</a></li>
+                <li><a href="./pages/connect_interface.php">Me connecter</a></li>
+                <li><a href="./treatment/logout.php">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>
 
+    <div>
+        <h2>Bonjour <?php echo $user['author'] ?>,</h2>
+    </div>
     <h1>Destinations</h1>
     <div class="destinations">
 
