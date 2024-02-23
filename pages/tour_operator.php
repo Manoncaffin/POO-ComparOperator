@@ -7,7 +7,8 @@ require_once "../config/database.php";
 
 
 // Vérifier si l'utilisateur est connecté
-$userIsLoggedIn = isset($_SESSION['user']);
+$userIsLoggedIn = isset($_SESSION['user_id']);
+
 
 // Si l'utilisateur n'est pas connecté, désactiver les champs du formulaire
 $disabledAttribute = $userIsLoggedIn ? '' : 'disabled';
@@ -18,6 +19,9 @@ $tour_operator_id = isset($_GET['tour_operator_id']) ? $_GET['tour_operator_id']
 
 $manager = new Manager($db);
 $tour_operator = $manager->getOperatorById($tour_operator_id);
+
+
+$_SESSION['tour_operator_id'] = $tour_operator_id;
 
 // var_dump($tour_operator);
 
@@ -67,7 +71,9 @@ $back_link_url = isset($id) ? "destination.php?destination_id=$id" : "../index.p
         </div>
         <nav>
             <ul>
+                <?php if (!$userIsLoggedIn) { ?>
                 <li><a href="connect_interface.php">Me connecter</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>
@@ -113,7 +119,7 @@ if ($is_premium) {
 
     <div class="write-review">
         <h2>Ecrire une review :</h2>
-        <form action="submit_review.php" method="post">
+        <form action="../treatment/submit_review.php" method="post">
             
             <textarea name="message" placeholder="Votre avis" required<?php echo $disabledAttribute; ?>></textarea>
             <input type="number" name="grade" min="1" max="5" placeholder="Votre note (1-5)" required>

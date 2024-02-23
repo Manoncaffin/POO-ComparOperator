@@ -28,6 +28,8 @@ $confirmPassword = $_POST["confirm_password"];
     $manager = new Manager($db);
     $manager->addUser($user);
 
+    $_SESSION['user_id'] = $db->lastInsertId();
+
     header('Location: ../index.php');
     exit();
 

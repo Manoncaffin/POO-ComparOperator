@@ -40,7 +40,11 @@ $tour_operators = $manager->getOperatorByDestination($destination_id);
             </div>
             <nav>
                 <ul>
-                    <li><a href="../connect_interface.php">Me connecter</a></li>
+                <?php if (!$_SESSION['user_id']) { ?>
+                <li><a href="connect_interface.php">Me connecter</a></li>
+                <?php } else { ?>
+                    <li><a href="connect_interface.php">Se déconnecter</a></li>
+                <?php } ?>
                 </ul>
             </nav>
         </header>

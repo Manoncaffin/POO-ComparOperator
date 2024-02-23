@@ -36,8 +36,11 @@ $user = $manager->findUserById($_SESSION['user_id']);
         </div>
         <nav>
             <ul>
-                <li><a href="./pages/connect_interface.php">Me connecter</a></li>
+            <?php if ($user) { ?>
                 <li><a href="./pages/connect_interface.php">Se déconnecter</a></li>
+                <?php } else { ?>
+                <li><a href="./pages/connect_interface.php">Me connecter</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>

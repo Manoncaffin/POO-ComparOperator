@@ -70,9 +70,16 @@ class Manager {
         return $result->fetchAll();
     }
 
-    public function createReview()
+    public function createReview(Review $review)
     {
-        // return $this->createReview;
+        $result = $this->db->prepare("INSERT INTO review (message, author_id, grade, tour_operator_id) VALUES (:message, :author_id, :grade, :tour_operator_id)");
+        $result -> execute([
+           ":message" => $review -> getMessage(),
+            ":author_id" => $review -> getAuthor(),
+            ':grade' => $review->getGrade(),
+            ":tour_operator_id" => $review->getTourOperatorId(),
+        ]);
+       
     }
 
     public function getReviewByOperatorId($id)

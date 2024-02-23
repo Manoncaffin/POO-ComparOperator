@@ -5,6 +5,7 @@ class Review {
     private $message;
     private $author;
     private $tourOperatorId;
+    private $grade;
 
     public function __construct($data) {
 
@@ -13,6 +14,7 @@ class Review {
         }
         $this->message = $data['message'];
         $this->author = $data['author'];
+        $this->grade = $data['grade'];
         $this->tourOperatorId = $data['tour_operator_id'];
     }
 
@@ -34,6 +36,10 @@ class Review {
     public function getTourOperatorId()
     {
         return $this->tourOperatorId;
+    }
+
+    public function getGrade() {
+        return $this->grade;
     }
 }
 
