@@ -29,6 +29,7 @@ $alldestinations = $manager->getAllDestination();
             <ul>
                 <li><a href="tour_operators.php">Tours Opérateurs</a></li>
                 <li><a href="./connect_interface.php">Me connecter</a></li>
+                <li><a href="logout.php">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>

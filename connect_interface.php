@@ -19,7 +19,7 @@ require_once('./config/database.php');
 <body>
     <header>
         <div class="logo">
-            <img src="./img/logo_compar_operator.svg" alt="ComparOperator">
+        <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
         </div>
     </header>
 
@@ -29,7 +29,7 @@ require_once('./config/database.php');
             <div>
                 <form action="./treatment/treatment_connect.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/avatar.jpeg" alt="avatar">
+                        <img src="./img/avatar__joan.png" alt="avatar">
                     </div>
                     <div class="form-group user">
                         <input type="text" placeholder="Pseudo" name="author" class="form-control">

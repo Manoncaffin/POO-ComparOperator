@@ -25,7 +25,7 @@ $operators = $manager->getAllOperator();
 
 <header>
     <div class="logo background_logo">
-        <img src="./img/logo_compar_operator.svg" alt="ComparOperator">
+        <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
     </div>
 </header>
 
@@ -132,7 +132,7 @@ $operators = $manager->getAllOperator();
                         <input type="number" name="gradeCount" required class="w-100">
                     </div>
                     <div class="name-field">
-                        <label for="gradeTotal">Total des notes</label>
+                        <label for="gradeTotal">Total des points</label>
                         <input type="number" name="gradeTotal" required class="w-100">
                     </div>
                     <div class="name-field">

@@ -23,9 +23,6 @@ var_dump($tourOperator);
     $adminManager = new AdminManager($db);
     $adminManager->createTourOperator($tourOperator);
     $adminManager->updateOperatorToPremium($tourOperator);
-
-
-
 }
 
 ?>

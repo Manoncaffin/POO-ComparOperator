@@ -11,6 +11,7 @@ isset($_POST["password"]) && !empty($_POST["password"]) &&
 isset($_POST["confirm_password"]) && !empty($_POST["confirm_password"])
 
 ) {
+    $basePassword = $_POST["password"];
     $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     $user = new User([
@@ -22,7 +23,7 @@ isset($_POST["confirm_password"]) && !empty($_POST["confirm_password"])
 $confirmPassword = $_POST["confirm_password"];
 
  // Vérifiez si les deux champs de mot de passe sont identiques
- if ($user->getPassword() === $confirmPassword) {
+ if ($basePassword === $confirmPassword) {
     // Les mots de passe sont identiques, procédez au traitement
     $manager = new Manager($db);
     $manager->addUser($user);

@@ -19,7 +19,7 @@ require_once('./config/database.php');
 <body>
     <header>
         <div class="logo">
-            <img src="./img/logo_compar_operator.svg" alt="ComparOperator">
+        <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
         </div>
     </header>
 
@@ -29,21 +29,21 @@ require_once('./config/database.php');
             <div>
                 <form action="./treatment/treatment_connect.php" method="post" class="form">
                     <div class="avatar">
-                        <img src="./img/avatar.jpeg" alt="avatar">
+                        <img src="./img/avatar__brieuc.png" alt="avatar">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Pseudo" name="author" class="form-control">
+                        <input type="text" placeholder="Pseudo" name="author" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Mot de passe" name="password" class="form-control">
+                        <input type="password" placeholder="Mot de passe" name="password" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Confirmez votre mot de passe" name="confirm-password" class="form-control">
+                        <input type="password" placeholder="Confirmez votre mot de passe" name="confirm-password" class="form-control" required>
                     </div>
 
                     <div class="connect">
                         <div>
-                            <button class="btn" a href="./index.php" type="submit">Valider inscription</button>
+                            <button class="btn"><a href="./index.php" type="submit" class="text-decoration-none text black">Valider inscription</a></button>
                         </div>
                     </div>
                 </form>
