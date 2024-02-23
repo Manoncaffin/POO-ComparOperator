@@ -32,12 +32,12 @@ if (!$tour_operator) {
 <body>
     <header>
         <div class="logo">
-            <a href="index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
+            <a href="../index.php"><img src="./img/logo_compar_operator.svg" alt="Logo ComparOperator"></a>
         </div>
         <nav>
             <ul>
-                <li><a href="tour_operators.php">Tours Opérateurs</a></li>
-                <li><a href="login.php">Me connecter</a></li>
+                <li><a href="./tour_operator.php">Tours Opérateurs</a></li>
+                <li><a href="./connect_interface.php">Me connecter</a></li>
             </ul>
         </nav>
     </header>

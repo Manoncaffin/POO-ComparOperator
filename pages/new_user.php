@@ -19,7 +19,7 @@ require_once('./config/database.php');
 <body>
     <header>
         <div class="logo">
-        <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
+        <a href="../index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
         </div>
     </header>
 
@@ -27,7 +27,7 @@ require_once('./config/database.php');
 
         <section class="container background_connect vh-100 d-flex flex-column justify-content-around">
             <div>
-                <form action="./treatment/treatment_connect.php" method="post" class="form">
+                <form action="./treatment/treatment_add_user.php" method="post" class="form">
                     <div class="avatar">
                         <img src="./img/avatar__brieuc.png" alt="avatar">
                     </div>
@@ -38,12 +38,12 @@ require_once('./config/database.php');
                         <input type="password" placeholder="Mot de passe" name="password" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Confirmez votre mot de passe" name="confirm-password" class="form-control" required>
+                        <input type="password" placeholder="Confirmez votre mot de passe" name="confirm_password" class="form-control" required>
                     </div>
 
                     <div class="connect">
                         <div>
-                            <button class="btn"><a href="./index.php" type="submit" class="text-decoration-none text black">Valider inscription</a></button>
+                            <button class="btn" type="submit" class="text-decoration-none text black">Valider inscription</button>
                         </div>
                     </div>
                 </form>

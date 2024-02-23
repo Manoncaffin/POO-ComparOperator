@@ -19,7 +19,7 @@ require_once('./config/database.php');
 <body>
     <header>
         <div class="logo">
-        <a href="./index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
+        <a href="../index.php"><img src="./img/logo_compar_operator.svg" alt="ComparOperator"></a>
         </div>
     </header>
 
@@ -27,7 +27,7 @@ require_once('./config/database.php');
 
         <section class="container background_connect vh-100 d-flex flex-column justify-content-around">
             <div>
-                <form action="./treatment/treatment_connect.php" method="post" class="form">
+                <form action="./treatment/treatment_connexion.php" method="post" class="form">
                     <div class="avatar">
                         <img src="./img/avatar__joan.png" alt="avatar">
                     </div>
@@ -40,7 +40,7 @@ require_once('./config/database.php');
 
                     <div class="connect">
                         <div>
-                            <button class="btn btn-primary" a href="./index.php" type="submit">Se connecter</button>
+                            <button class="btn btn-primary" a href="../index.php" type="submit">Se connecter</button>
                         </div>
                         <div>
                             <p>Nouvel utilisateur ?</p>

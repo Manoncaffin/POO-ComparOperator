@@ -19,9 +19,6 @@ var_dump($destination);
     $adminManager = new AdminManager($db);
     $adminManager->createDestination($destination);
 
-
 }
- 
-
 
 ?>

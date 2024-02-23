@@ -1,5 +1,5 @@
 <?php
-
+// page new_user
 // cette page récupère les infos 
 require_once('../config/autoload.php');
 require_once('../config/database.php');
@@ -39,7 +39,6 @@ echo "Veuillez remplir tous les champs obligatoires.";
 
 header('Location: ../index.php');
 exit();
-
 }
 
-?>
+

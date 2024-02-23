@@ -22,12 +22,22 @@ class Manager {
         $_SESSION['user_id'] = $id;
     }
 
-    public function findUserById(User $user)
+    public function findUserById($id)
     {
         $request = $this ->db->prepare('SELECT id, author FROM user WHERE id = :id');
         $request->execute([
-            'id' => $user->getId(),
+            'id' => $id,
         ]);
+        return $request->fetch();
+    }
+
+    public function connectUser(User $user)
+    {
+        $request = $this->db->prepare('SELECT * FROM user WHERE author = :author');
+        $request->execute([
+            'author' => $user->getAuthor(),
+        ]);
+        return $request->fetch();
     }
 
     public function getAllDestination()

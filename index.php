@@ -7,6 +7,8 @@ $manager = new Manager($db);
 $alldestinations = $manager->getAllDestination();
 
 
+$user = $manager->findUserById($_SESSION['user_id']);
+
 ?>
 
 
@@ -27,12 +29,16 @@ $alldestinations = $manager->getAllDestination();
         </div>
         <nav>
             <ul>
-                <li><a href="tour_operators.php">Tours Opérateurs</a></li>
-                <li><a href="./connect_interface.php">Me connecter</a></li>
-                <li><a href="logout.php">Se déconnecter</a></li>
+                <li><a href="./pages/tour_operator.php">Tours Opérateurs</a></li>
+                <li><a href="./pages/connect_interface.php">Me connecter</a></li>
+                <li><a href="./treatment/logout.php">Se déconnecter</a></li>
             </ul>
         </nav>
     </header>
+
+    <div>
+        <h2>Bonjour <?php echo $user['author'] ?>,</h2>
+    </div>
     <h1>Destinations</h1>
     <div class="destinations">
 
